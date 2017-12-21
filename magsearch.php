@@ -4,20 +4,6 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-<script type="text/javascript">
-function MyPopUpWin(url, width, height) {
-    var leftPosition, topPosition;
-    //Allow for borders.
-    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
-    //Allow for title and status bars.
-    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
-    //Open the window.
-    window.open(url, "Window2",
-    "status=no,height=" + height + ",width=" + width + ",resizable=yes,left="
-    + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY="
-    + topPosition + ",toolbar=no,menubar=no,scrollbars=yes,location=no,directories=no");
-}
-</script/>
 
 <?php
   include('php/essentials.php');
@@ -28,8 +14,8 @@ function MyPopUpWin(url, width, height) {
 		echo'<title>'.SITE_NAME.'</title>';
 ?>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
+                <meta name="description" content="Model Railway Express Magazine Issue Search" />
+		<meta name="keywords" content="Model, Railway, Railroad, Magazine, Search" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
