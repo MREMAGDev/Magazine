@@ -10,7 +10,7 @@
     $link = "";
     $link_ok = FALSE;
     if (file_exists($lockfile)) {
-        file_put_contents($lockfile,$datestamp." ERROR:- Pulisher lockfile from previous run found!\n");
+        file_put_contents($lockfile,$datestamp." ERROR:- Lockfile from previous run found!\n");
         exit(1);
     } else {
         file_put_contents($lockfile,"Publication In progress! [".$datestamp."]\n");
@@ -24,7 +24,7 @@
         			break;
 	        	case 'Link':
                                 $link = $data[1];
-                                if(stristr($link,"https://issuu.com/drmepublishingltd/") !== FALSE) {
+                                if(stristr($link,'https://issuu.com/drmepublishingltd/') !== FALSE) {
                                   $link_ok = TRUE;
                                 } else {
                                   $link = "";

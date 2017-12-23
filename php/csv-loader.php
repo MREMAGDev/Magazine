@@ -46,7 +46,7 @@
         			break;
                         case 'Link':
                                 $link = $data[1];
-                                if(stristr($link,"https://issuu.com/drmepublishingltd/") !== FALSE) {
+                                if(stristr($link,'https://issuu.com/drmepublishingltd/') !== FALSE) {
                                     $link_ok = TRUE;
                                 } else {
                                     $link = "";
