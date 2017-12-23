@@ -3,10 +3,9 @@
     include('php/essentials.php');
     
     $datestamp = date('YmdHis');
-    $filepath = "/home/robert/";
     $filename = "testpublish.csv";
-    $archivefile = $filepath."archive/".$filename.$datestamp;
-    $lockfile = $filepath."publisher.lock";
+    $archivefile = UPLOAD_PATH."archive/".$filename.$datestamp;
+    $lockfile = UPLOAD_PATH."publisher.lock";
     $publish = 0;
     $link = "";
     $link_ok = FALSE;
@@ -16,7 +15,7 @@
     } else {
         file_put_contents($lockfile,"Publication In progress! [".$datestamp."]\n");
     }
-	if (($handle = fopen($filepath.$filename, "r")) == TRUE) {
+	if (($handle = fopen(UPLOAD_PATH.$filename, "r")) == TRUE) {
     	while (($data = fgetcsv($handle, 1000, ",")) == TRUE) {
         	$num = count($data);
         	switch ($data[0]) {
@@ -60,8 +59,8 @@
             }
         }
         $result1->free();
-    if(copy($filepath.$filename, $archivefile)) {
-        unlink($filepath.$filename);
+    if(copy(UPLOAD_PATH.$filename, $archivefile)) {
+        unlink(UPLOAD_PATH.$filename);
         unlink($lockfile);
     } else {
         file_put_contents($lockfile,$datestamp." ERROR:- Unable to archive upoaded publication trigger file for issue ".$issue."!\n");

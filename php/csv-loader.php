@@ -3,10 +3,9 @@
     include('php/essentials.php');
     
     $datestamp = date('YmdHis');
-    $filepath = "/home/robert/";
     $filename = "test.csv";
-    $archivefile = $filepath."archive/".$filename.$datestamp;
-    $lockfile = $filepath."indexloader.lock";
+    $archivefile = UPLOAD_PATH."archive/".$filename.$datestamp;
+    $lockfile = UPLOAD_PATH."indexloader.lock";
     $debug = FALSE;
     $keywords = array();
     $month_str = array(
@@ -32,7 +31,7 @@
     } else {
         file_put_contents($lockfile,"CSV Load In progress! [".$datestamp."]\n");
     }
-	if (($handle = fopen($filepath.$filename, "r")) == TRUE) {
+	if (($handle = fopen(UPLOAD_PATH.$filename, "r")) == TRUE) {
     	while (($data = fgetcsv($handle, 1000, ",")) == TRUE) {
         	$num = count($data);
         	switch ($data[0]) {
@@ -112,8 +111,8 @@
         $issue_insert="INSERT INTO mag_issue(issue, year, title, link, published) VALUES($issue, $year,' $mag_title', '$link', $publish)";
         $result2=$dbcn->query($issue_insert);
         $result2->free();
-    if(copy($filepath.$filename, $archivefile)) {
-        unlink($filepath.$filename);
+    if(copy(UPLOAD_PATH.$filename, $archivefile)) {
+        unlink(UPLOAD_PATH.$filename);
         unlink($lockfile);
     } else {
         file_put_contents($lockfile,$datestamp." ERROR:- Unable to archive uploaded CSV File!\n");

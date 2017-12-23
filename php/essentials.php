@@ -15,7 +15,9 @@ $sp_result = $dbcn->query($sp_query);
 while(list($sysparam_id,$sysparam_str,$sysparam_num,$global_name) = $sp_result->fetch_row())
 { 
   if($sysparam_id == 6 || $sysparam_id == 7)
-     {define($global_name,$sysparam_num);} else {define($global_name,$sysparam_str);} 
+      {define($global_name,$sysparam_num);} 
+  else 
+      {define($global_name,$sysparam_str);} 
 }
 $sp_result->free();
 
