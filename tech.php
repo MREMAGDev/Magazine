@@ -115,6 +115,7 @@ function MyPopUpWin(url, width, height) {
 		<div id="footer">
 		              <?php include('php/footer.php'); ?>	
 		</div>
-
+        <!-- Usage Tracker --!>
+        <?php include('html/tracker.html'); ?>
 	</body>
 </html>
