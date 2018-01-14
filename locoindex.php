@@ -4,13 +4,15 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
+
 <?php
   include('php/essentials.php');
+  include('php/loco_dcon.php');
 ?>
 <html>
 	<head>
 <?php
-		echo'<title>'.SITE_NAME.'</title>';
+		echo'<title>'.SITE_NAME.'</title>'; 
 ?>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -37,18 +39,12 @@
 					<div class="container">
 							
 						<!-- Logo -->
-					<?php	/*	echo'<h1>'.SITE_NAME.'</h1>'; */ ?>
+					<?php		/* echo'<h1>'.SITE_NAME.'</h1>'; */ ?>
 						
 						<!-- Nav -->
-							 <nav id="nav">
-                                                               <ul>
-                                                                        <li><a href="index.php">Home</a></li>
-                                                                        <li class="active"><a href="news.php">News</a></li>
-                                                                        <li><a target="_blank" href="phpBB3/index.php">Have Your Say</a></li>
-                                                                        <?php include('php/magmenu.php'); ?>
-                                                                        <li><a target="_blank" href="https://shop.spreadshirt.co.uk/MREMag">MREMag Shop</a></li>
-                                                                </ul>
-                                                        </nav>
+						 <nav id="nav">
+                                                       <?php include('html/locomenu.html'); ?>
+                                                 </nav>
 					</div>
 				</div>
 				
@@ -65,16 +61,12 @@
 			</div>
 		
 		<!-- Section One -->
-                              <?php 
-                                   $news_type = 2;
-                                   include('php/getheadlines.php'); 
-                              ?>
+                              <?php include('php/locoindex.php'); ?>
 	<!-- Footer -->
 		<div id="footer">
-                              <?php include('php/footer.php'); ?>
-			
+		              <?php include('php/footer.php'); ?>	
 		</div>
-        <!-- Usage Tracker --!>
+	<!-- Usage Tracker --!>
         <?php include('html/tracker.html'); ?>
 	</body>
 </html>
