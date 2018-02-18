@@ -8,6 +8,11 @@
 <?php
   include('php/essentials.php');
   include('php/loco_dcon.php');
+  if(isset($_GET['mt'])) {
+    if ($_GET['mt'] != null) {
+      $menutype = intval(trim($_GET['mt']));
+    } else { $menutype = 0; }
+  } else { $menutype = 0; }
 ?>
 <html>
 	<head>
@@ -43,7 +48,13 @@
 						
 						<!-- Nav -->
 						 <nav id="nav">
-                                                       <?php include('html/locomenu.html'); ?>
+                                                       <?php
+                                                          if($menutype == 0) {
+                                                             include('html/locomenu_std.html');
+                                                          } else {
+                                                             include('html/locomenu_narrow.html');
+                                                          }
+                                                       ?>
                                                  </nav>
 					</div>
 				</div>
@@ -52,8 +63,10 @@
 				<div id="banner">
 					<section class="container">
 						<?php 
-                                                    echo'<h2>'.SITE_NAME.'</h2>'; 
-						    echo'<span>'.STRAP_LINE.'</span>';
+                                                    echo'<h2>&nbsp;</h2>'; 
+						    echo'<span>&nbsp;</span>';
+                                                    #echo'<h2>'.SITE_NAME.'</h2>'; 
+						    #echo'<span>'.STRAP_LINE.'</span>';
                                                 ?>
 					</section>
 				</div>

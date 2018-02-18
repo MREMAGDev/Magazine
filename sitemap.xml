@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://www.mre-mag.com/"?>
+<!-- generated-on="2018-01-26 at 06:05:00 GMT" -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://www.mre-mag.com/index.php</loc>
+    <lastmod>2018-02-16T00:00+00:01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>http://www.mre-mag.com/news.php</loc>
+    <lastmod>2018-02-16T00:00+00:01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://www.mre-mag.com/mag_search.php</loc>
+    <lastmod>2018-02-16T00:00+00:01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>http://www.mre-mag.com/locoindex.php</loc>
+    <lastmod>2018-02-15T23:55:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>http://www.mre-mag.com/locohelp.php</loc>
+    <lastmod>2018-02-15T23:55:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>http://www.mre-mag.com/locosearch.php</loc>
+    <lastmod>2018-02-12T00:00:01+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>
+  <url>
+    <loc>http://www.mre-mag.com/indevsearch.php</loc>
+    <lastmod>2018-02-12T00:00:02+30:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>

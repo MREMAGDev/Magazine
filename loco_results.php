@@ -4,38 +4,30 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
+
 <?php
   include('php/essentials.php');
   include('php/loco_dcon.php');
-
-  if(isset($_GET['id'])) {
-    if ($_GET['id'] != null) {
-      $compid = (int)trim($_GET['id']);
-    } else { $compid = 1; }
-  } else { $compid = 1; }
-  if(isset($_GET['gu'])) {
-    if ($_GET['gu'] != null) { 
-      $gauge_id = (int)trim($_GET['gu']); 
-    } else { $gauge_id = 0; }
-  } else { $gauge_id = 0; }
-  if (isset($_GET['mt'])) {
-    if ($_GET['mt'] != null) {
-      $menutype = (int)trim($_GET['mt']);
-    } else { $menutype = 0; }
-  } else { $menutype = 0; }
+  include('php/loco_functions.php');
 ?>
 <html>
 	<head>
-
 <?php
+
+     if(isset($_POST['menutype'])) {
+        if($_POST['menutype'] != null) {
+           $menutype = (int)trim($_POST['menutype']);
+        } else {$menutype = 0;}
+     } else {$menutype = 0;}
+
 		echo'<title>'.SITE_NAME.'</title>';
 ?>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="Free Model Railway Magazine, Published every two months">
-                <meta name="keywords" content="Free, MReMag,Magazine Model Trains, Model Railway, Model Railroad, News, Comment, Update
-s, Model Loco Database">
-                <meta name="author" content="DRMePublishing.com">
-                <meta name="google" content="notranslate" />
+ 		<meta name="robots" content="noindex,nofollow">
+		<meta name="keywords" content="Free, MReMag,Magazine Model Trains, Model Railway, Model Railroad, News, Comment, Updates, Model Loco Database">
+  		<meta name="author" content="DRMePublishing.com">
+  		<meta name="google" content="notranslate" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
@@ -62,13 +54,12 @@ s, Model Loco Database">
 						
 						<!-- Nav -->
 							 <nav id="nav">
-                                                            <?php 
-                                                                if($menutype == 0) {
-                                                                   include('html/locomenu_std.html'); 
-                                                                } else {
-                                                                   include('html/locomenu_narrow.html');
-                                                                }
-                                                            ?>
+                                                          <?php
+                                                             if($menutype == 0)
+                                                               { include('html/locomenu_std.html');} 
+                                                             else
+                                                               { include('html/locomenu_narrow.html');}
+                                                           ?>
                                                         </nav>
 					</div>
 				</div>
@@ -88,18 +79,13 @@ s, Model Loco Database">
 			</div>
 		
 		<!-- Section One -->
-                              <?php include('php/locosearch.php'); ?>
+                              <?php include('php/process_locosearch.php'); ?>
 	<!-- Footer -->
 		<div id="footer">
                               <?php include('php/footer.php'); ?>
 			
 		</div>
-        <!-- Usage Tracker --!>
+	<!-- Usage Tracker --!>
         <?php include('html/tracker.html'); ?>
-        <!-- Select Box Interlock --!>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <?php 
-            if($all_present == 3) {echo '<script type="text/javascript" src="js/interlock.js"></script>';}
-        ?>
 	</body>
 </html>

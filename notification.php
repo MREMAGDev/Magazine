@@ -5,30 +5,16 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 
-<script type="text/javascript">
-function MyPopUpWin(url, width, height) {
-    var leftPosition, topPosition;
-    //Allow for borders.
-    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
-    //Allow for title and status bars.
-    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
-    //Open the window.
-    window.open(url, "Window2",
-    "status=no,height=" + height + ",width=" + width + ",resizable=yes,left="
-    + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY="
-    + topPosition + ",toolbar=no,menubar=no,scrollbars=yes,location=no,directories=no");
-}
-</script/>
-
-<html>
-	<head>
 <?php
 		echo'<title>MREMag</title>'; 
 ?>
+                <meta name="robots" content="noindex,nofollow">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+                <meta name="author" content="DRMePublishing.com">
+                <meta name="google" content="notranslate" />
+		<meta name="description" content="Free Model Railway Magazine, Published every two months">
+                <meta name="keywords" content="Free, MReMag,Magazine Model Trains, Model Railway, Model Railroad, News, Comment, Updates, Model Loco Database">
+                <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/skel.min.js"></script>

@@ -13,9 +13,11 @@
 		echo'<title>'.SITE_NAME.'</title>';
 ?>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<meta name="description" content="Free Model Railway Magazine, Published every two months">
+                <meta name="keywords" content="Free, MReMag,Magazine Model Trains, Model Railway, Model Railroad, News, Comment, Updates, Model Loco Database">
+                <meta name="author" content="DRMePublishing.com">
+                <meta name="google" content="notranslate" />
+                <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -56,8 +58,10 @@
 				<div id="banner">
 					<section class="container">
 						<?php 
-                                                    echo'<h2>'.SITE_NAME.'</h2>'; 
-						    echo'<span>'.STRAP_LINE.'</span>';
+                                                    #echo'<h2>'.SITE_NAME.'</h2>'; 
+						    #echo'<span>'.STRAP_LINE.'</span>';
+                                                    echo'<h2>&nbsp;</h2>'; 
+						    echo'<span>&nbsp;</span>';
                                                 ?>
 					</section>
 				</div>

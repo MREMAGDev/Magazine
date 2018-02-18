@@ -7,24 +7,17 @@
 <?php
   include('php/essentials.php');
   include('php/loco_dcon.php');
-
-  if(isset($_GET['id'])) {
-    if ($_GET['id'] != null) {
-      $compid = (int)trim($_GET['id']);
-    } else { $compid = 1; }
-  } else { $compid = 1; }
-  if(isset($_GET['gu'])) {
-    if ($_GET['gu'] != null) { 
-      $gauge_id = (int)trim($_GET['gu']); 
-    } else { $gauge_id = 0; }
-  } else { $gauge_id = 0; }
+ 
   if (isset($_GET['mt'])) {
     if ($_GET['mt'] != null) {
-      $menutype = (int)trim($_GET['mt']);
+      $menutype = intval(trim($_GET['mt']));
     } else { $menutype = 0; }
   } else { $menutype = 0; }
+  if($menutype == 0) {$gauge_id = 0;} else {$gauge_id = 3;}
 ?>
+
 <html>
+
 	<head>
 
 <?php
@@ -88,7 +81,7 @@ s, Model Loco Database">
 			</div>
 		
 		<!-- Section One -->
-                              <?php include('php/locosearch.php'); ?>
+                              <?php include('php/indevsearch.php'); ?>
 	<!-- Footer -->
 		<div id="footer">
                               <?php include('php/footer.php'); ?>
@@ -96,10 +89,5 @@ s, Model Loco Database">
 		</div>
         <!-- Usage Tracker --!>
         <?php include('html/tracker.html'); ?>
-        <!-- Select Box Interlock --!>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <?php 
-            if($all_present == 3) {echo '<script type="text/javascript" src="js/interlock.js"></script>';}
-        ?>
 	</body>
 </html>

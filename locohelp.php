@@ -7,6 +7,22 @@
 
 <?php
   include('php/essentials.php');
+  include('php/loco_dcon.php');
+  if(isset($_GET['mt'])) {
+     if ($_GET['mt'] != null) {
+        $menutype = (int)trim($_GET['mt']);
+     } else {$menutype = 0;}
+  } else {$menutype = 0;}
+  if (isset($_GET['id'])) {
+      if ($_GET['id'] != null) {
+        $company_id = (int)trim($_GET['id']);
+      } else {$company_id = 0;}
+  } else {$company_id = 0;}
+  if (isset($_GET['gu'])){
+      if ($_GET['gu'] != null) {
+        $guage_id = (int)trim($_GET['gu']);
+      } else {$gauge_id = 0;}
+  } else {$gauge_id = 0;}
 ?>
 <html>
 	<head>
@@ -15,7 +31,7 @@
 ?>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="Free Model Railway Magazine, Published every two months">
-                <meta name="keywords" content="Free, MReMag,Magazine Model Trains, Model Railway, Model Railroad, News, Comment, Updates, Model Loco Database">
+                <meta name="keywords" content="Serach Help, Free, MReMag, Magazine ,Model Trains, Model Railway, Model Railroad, News, Comment, Updates, Model Loco Database">
                 <meta name="author" content="DRMePublishing.com">
                 <meta name="google" content="notranslate" />
                 <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
@@ -44,15 +60,14 @@
 						
 						<!-- Nav -->
 						 <nav id="nav">
-                                                               <ul>
-                                                                        <li class="active"><a href="index.php">Home</a></li>
-                                                                        
-                                                                        <li><a href="news.php">News</a></li>
-                                                                        <li><a target="_blank" href="phpBB3/index.php">Have Your Say</a></li>
-                                                                        <?php include('php/magmenu.php'); ?>
-                                                                        <li><a target="_blank" href="https://shop.spreadshirt.co.uk/MREMag">MREMag Shop</a></li>
-                                                                </ul>
-                                                        </nav>
+                                                       <?php
+                                                          if($menutype == 0) {
+                                                             include('html/locomenu_std.html');
+                                                          } else {
+                                                             include('html/locomenu_narrow.html');
+                                                          }
+                                                       ?>
+                                                 </nav>
 					</div>
 				</div>
 				
@@ -60,10 +75,10 @@
 				<div id="banner">
 					<section class="container">
 						<?php 
-                 #                                   echo'<h2>'.SITE_NAME.'</h2>'; 
-		#				    echo'<span>'.STRAP_LINE.'</span>';
                                                     echo'<h2>&nbsp;</h2>'; 
 						    echo'<span>&nbsp;</span>';
+                                                    #echo'<h2>'.SITE_NAME.'</h2>'; 
+						    #echo'<span>'.STRAP_LINE.'</span>';
                                                 ?>
 					</section>
 				</div>
@@ -71,10 +86,7 @@
 			</div>
 		
 		<!-- Section One -->
-                              <?php 
-                                   $news_type = 1;
-                                   include('php/getheadlines.php'); 
-                              ?>
+                              <?php include('php/locohelp.php'); ?>
 	<!-- Footer -->
 		<div id="footer">
 		              <?php include('php/footer.php'); ?>	
